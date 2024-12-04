@@ -11,6 +11,7 @@ type Vehicle interface {
 	move()
 }
 
+// поскольку функция принимает агрумент, реализующий интерфейс Vehicle - мы можем быть уверены, что у него имеется метод move()
 func drive(v Vehicle) {
 	v.move()
 }
