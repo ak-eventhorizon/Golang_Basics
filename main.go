@@ -16,6 +16,7 @@ func main() {
 		fmt.Println(err)
 		return
 	}
+
 	defer resp.Body.Close()
 
 	// for {
