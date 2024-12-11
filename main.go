@@ -25,7 +25,6 @@ func main() {
 	// 	if n == 0 || err != nil {
 	// 		break
 	// 	}
-
 	// 	fmt.Println(string(buffer[:n]))
 	// }
 
