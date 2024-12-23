@@ -5,7 +5,7 @@ import (
 )
 
 // ********* placeholder *********
-//
+// Описание
 
 func WordCount(s string) map[string]int {
 
