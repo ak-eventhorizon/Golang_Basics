@@ -1,7 +1,5 @@
 package main // определение пакета для текущего файла
-import (
-	"fmt"
-)
+import "fmt"
 
 // ********* For *********
 // в go одна конструкция для циклов - for
@@ -10,7 +8,7 @@ import (
 // for <init statement> ; <condition expression> ; <post statement> { ... }
 
 // <init statement> 		- выполняется однократно перед первой итерацией
-// <condition expression> 	- вычисляется перед каждой итерацией, если false - то итерации не будет
+// <condition expression> 	- вычисляется перед каждой итерацией, если false - то итерации не будет, цикл завершится
 // <post statement> 		- выполняется в конце каждой итерации
 
 func main() {
@@ -23,7 +21,7 @@ func main() {
 	fmt.Println(sum)
 
 	counter := 1
-	// чтобы использовать for как цикл while - <init statement> и <post statement> - могут быть пропущены
+	// чтобы использовать for как цикл while - <init statement> и <post statement> могут быть пропущены
 	for counter < 100 {
 		counter += counter
 	}
