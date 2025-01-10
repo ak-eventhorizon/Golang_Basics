@@ -1,42 +1,60 @@
-package main // определение пакета для текущего файла
+package main
+
 import (
 	"fmt"
+	"math"
+	"slices"
 )
 
-// ********* For *********
-// в go одна конструкция для циклов - for
-// for может состоять из трех компонентов, разделенных точкой с запятой:
-
-// for <init statement> ; <condition expression> ; <post statement> { ... }
-
-// <init statement> 		- выполняется однократно перед первой итерацией
-// <condition expression> 	- вычисляется перед каждой итерацией, если false - то итерации не будет
-// <post statement> 		- выполняется в конце каждой итерации
+// ********* Advent of Code 2024 *********
+// --- Day 1: Historian Hysteria ---
+// https://adventofcode.com/2024/day/1
 
 func main() {
 
-	sum := 0
-	// базовое использование
-	for i := 0; i < 10; i++ {
-		sum += i
-	}
-	fmt.Println(sum)
+	var slice1 = []int{3, 4, 2, 1, 3, 3}
+	var slice2 = []int{4, 3, 5, 3, 9, 3}
 
-	counter := 1
-	// чтобы использовать for как цикл while - <init statement> и <post statement> - могут быть пропущены
-	for counter < 100 {
-		counter += counter
-	}
-	fmt.Println(counter)
+	answer := day1_ver1(slice1, slice2)
+	fmt.Println(answer)
 
-	c := 0
+	answer = day1_ver2(slice1, slice2)
+	fmt.Println(answer)
 
-	// бесконечный цикл, необходимо предусмотреть условие выхода из него
-	for {
-		c = c + 2
-		if c > 10 {
-			fmt.Println("Infinite loop exit")
-			break
-		}
+}
+
+// Вариант 1 - без сортировки исходных списков.
+// Для выполнения условия задачи достаточно найти разницу между суммами первого и второго списков.
+func day1_ver1(list1 []int, list2 []int) float64 {
+
+	sum1 := 0
+	sum2 := 0
+
+	for _, v := range list1 {
+		sum1 += v
 	}
+
+	for _, v := range list2 {
+		sum2 += v
+	}
+
+	result := math.Abs(float64(sum1) - float64(sum2))
+
+	return result
+}
+
+// Вариант 2 - с предварительной сортировкой исходных списков.
+// Такой вариант реализует описание алгоритма решения, указанного в постановке задачи.
+func day1_ver2(list1 []int, list2 []int) float64 {
+
+	slices.Sort(list1)
+	slices.Sort(list2)
+
+	var result float64 = 0
+
+	for i := range list1 {
+		result += math.Abs(float64(list1[i]) - float64(list2[i]))
+	}
+
+	return result
 }
