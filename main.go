@@ -12,6 +12,7 @@ import (
 
 func main() {
 
+	//  ******* Day 1 *******
 	var slice1 = []int{3, 4, 2, 1, 3, 3}
 	var slice2 = []int{4, 3, 5, 3, 9, 3}
 
@@ -21,6 +22,18 @@ func main() {
 	answer = day1_ver2(slice1, slice2)
 	fmt.Println(answer)
 
+	//  ******* Day 2 *******
+	var reports = []string{
+		"7 6 4 2 1",
+		"1 2 7 8 9",
+		"9 7 6 2 1",
+		"1 3 2 4 5",
+		"8 6 4 4 1",
+		"1 3 6 7 9",
+	}
+
+	answer2 := day2(reports)
+	fmt.Println(answer2)
 }
 
 // Вариант 1 - без сортировки исходных списков.
@@ -57,4 +70,11 @@ func day1_ver2(list1 []int, list2 []int) float64 {
 	}
 
 	return result
+}
+
+func day2(list []string) int {
+
+	var safeCount int = 0
+
+	return safeCount
 }
