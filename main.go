@@ -8,6 +8,5 @@ import (
 // Description
 
 func main() {
-
 	fmt.Println("")
 }
