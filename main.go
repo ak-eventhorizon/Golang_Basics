@@ -8,5 +8,5 @@ import (
 // Description
 
 func main() {
-	fmt.Println("HW")
+	fmt.Println("")
 }
