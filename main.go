@@ -8,5 +8,5 @@ import (
 // Description
 
 func main() {
-	fmt.Println("Hello world!")
+	fmt.Println("No rest for the wicked!")
 }
